@@ -24,7 +24,7 @@ class PlayerNewViewModel {
     public func setObserverToPlayer(player: AVPlayer?,completion: @escaping ()->()){
         // 0.3초마다 Player가 반응하게
         let interval = CMTime(seconds: 0.3, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: {elapsed in
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: { elapsed in
             self.updateSliderTime(elapsed, player, completion)
         })
     }

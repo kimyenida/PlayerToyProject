@@ -175,15 +175,15 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func playerlayerLayer(playerView: UIView) -> AVPlayerLayer {
-        let renderingView = PlayerView(frame: videoView.frame)
+        let renderingView = PlayerView(frame: playerView.frame)
         playerView.insertSubview(renderingView, at: 0)
         
         renderingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            renderingView.leadingAnchor.constraint(equalTo: videoView.leadingAnchor),
-            renderingView.trailingAnchor.constraint(equalTo: videoView.trailingAnchor),
-            renderingView.topAnchor.constraint(equalTo: videoView.topAnchor),
-            renderingView.bottomAnchor.constraint(equalTo: videoView.bottomAnchor),
+            renderingView.leadingAnchor.constraint(equalTo: playerView.leadingAnchor),
+            renderingView.trailingAnchor.constraint(equalTo: playerView.trailingAnchor),
+            renderingView.topAnchor.constraint(equalTo: playerView.topAnchor),
+            renderingView.bottomAnchor.constraint(equalTo: playerView.bottomAnchor),
         ])
         
         return renderingView.avPlayerLayer

@@ -86,7 +86,9 @@ extension PagingView: UICollectionViewDelegateFlowLayout{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        print("X: \(scrollView.contentOffset.x), Y: \(scrollView.contentOffset.y)")
         pagingTabBar.indicatorViewLeadingConstraint.constant = scrollView.contentOffset.x / CGFloat(pagingTabBar.categoryTitleList.count)
+//        pagingTabBar.layoutIfNeeded()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
